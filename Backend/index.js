@@ -10,6 +10,8 @@ const User = require("./Models/User");
 const bcrypt = require('bcryptjs');
 const { getToken } = require("./utils/helpers");
 const experienceRoutes = require("./Routes/experience")
+const skillRoutes = require("./Routes/Skill");
+const projectRoutes = require("./Routes/project");
 // Add this line in index.js
 
 
@@ -55,6 +57,8 @@ app.get("/", (req, res) => res.send("Server is running"));
 
 app.use("/auth",authRoutes);
 app.use("/experience",experienceRoutes);
+app.use("/skills",skillRoutes);
+app.use("/project",projectRoutes);
 
 
 app.listen(8000, () => console.log("🚀 Server running on port 8000"));
