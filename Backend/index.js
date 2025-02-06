@@ -9,6 +9,7 @@ const authRoutes = require("./Routes/auth");
 const User = require("./Models/User");
 const bcrypt = require('bcryptjs');
 const { getToken } = require("./utils/helpers");
+const experienceRoutes = require("./Routes/experience")
 // Add this line in index.js
 
 
@@ -53,6 +54,7 @@ passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
 app.get("/", (req, res) => res.send("Server is running"));
 
 app.use("/auth",authRoutes);
+app.use("/experience",experienceRoutes);
 
 
 app.listen(8000, () => console.log("🚀 Server running on port 8000"));
