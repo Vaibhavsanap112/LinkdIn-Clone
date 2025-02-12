@@ -45,13 +45,26 @@ let opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = "thisisaclone";
 
-passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
-  User.findOne({ _id: jwt_payload.identifier }, function (err, user) {
-    if (err) return done(err, false);
-    if (user) return done(null, user);
-    return done(null, false);
-  });
-}));
+passport.use(
+  new JwtStrategy(opts,async function(jwt_payload,done){
+    try{
+      const user = await User.findOne({_id:jwt_payload.identifier});
+      if(user){
+        done(null,user);
+      }
+      else{
+        dont(null,false)
+      }
+
+    }catch(err){
+      if(err){
+        done(err,false)
+      }
+
+    }
+  })
+);
+
 
 app.get("/", (req, res) => res.send("Server is running"));
 
@@ -62,3 +75,4 @@ app.use("/project",projectRoutes);
 
 
 app.listen(8000, () => console.log("🚀 Server running on port 8000"));
+
