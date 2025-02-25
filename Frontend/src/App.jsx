@@ -1,42 +1,38 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faNewspaper, faGraduationCap, faBriefcase, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faNewspaper,
+  faGraduationCap,
+  faBriefcase,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import logo from "./assets/images/linkdinlogo.jpg";
 import "./App.css";
+import Navbar from "./Components/shared/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <div className="navbar w-full">
-        <img className="logo" src={logo} alt="Logo" />
-        <div className="icon-container">
-          <div className="icon">
-            <FontAwesomeIcon className="inc" icon={faUsers} />
-            <span>Network</span>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon className="inc" icon={faNewspaper} />
-            <span>News</span>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon className="inc" icon={faGraduationCap} />
-            <span>Learning</span>
-          </div>
-          <div className="icon">
-            <FontAwesomeIcon className="inc" icon={faBriefcase} />
-            <span>Jobs</span>
+    <>
+      <Navbar />
 
+      <div className="content">
+        <div className="login">
+          <div className="h2">
+            <h2>Welcome To Your </h2>
+            <h2>Professional community</h2>
           </div>
-          
-          
-          <div className="join">
-            <p>Join Now</p>
-          </div>
-          <div className="sign">
-            <p>Sign In</p>
+          <div className="form">
+            <h5>Email or phone</h5>
+            <input type="text" name="" id="" />
+            <h5>Password</h5>
+            <input type="text" name="" id="" />
+            <br />
+            <h5>Forgot Passowrd ?</h5>
+            <button>Sign IN</button>
           </div>
         </div>
+        <div className="piture"></div>
       </div>
-    </div>
+    </>
   );
 }
 
