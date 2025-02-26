@@ -68,22 +68,36 @@
 .all{
  
 }
+.container{
+  display: flex;
+  justify-content: space-between;
+}
 .container .content{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.content .login .h2{
+.content .login h2{
   color: rgb(218, 59, 59);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-left: 140px;
-  font-size: 20px;
+  font-size: 40px;
+  margin-top:1px ;
 
 }
 
 .content .login .form{
   margin-left: 140px;
 
+}
+.content .login .form p{
+  font-size: 11px;
+}
+#para{
+  margin-left: 40px;
+}
+#or{
+  margin-left: 130px;
 }
 .content .login .form input{
   height: 30px;
@@ -100,4 +114,12 @@
   border-radius: 15px;
   background-color: blue;
   color: white;
+}
+
+.container .picture img{
+  display: flex;
+  height: 550px;
+  width: 750px;
+  margin-top: 28px;
+
 }
